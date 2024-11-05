@@ -1,7 +1,7 @@
 {% extends "base.html" %} <!--Inkludera base.html, som innehåller navbar som ska inkluderas i varje fil-->
-
 {% block content %}
-	<div id="id01" class="modal">
+    <script src="{{ url_for('static', filename='script/build/modal.js') }}"></script>
+	<div id="delete-modal" class="modal">
 		<div class="modal-content">
 			<div class="container">
 				<br>
@@ -10,7 +10,7 @@
 				<br>
 				<br>
 				<div class="clearfix">
-					<button onclick="document.getElementById('id01').style.display='none'" type="button" class="modal-button cancelbtn">Cancel</button>
+					<button onclick="document.getElementById('delete-modal').style.display='none'" type="button" class="modal-button cancelbtn">Cancel</button>
 					<a href="{{ url_for('removepostcontent', current_postcontent_id=current_postcontent.id, current_post_id=current_post.id) }}" class="modal-button deletebtn">Confirm</a>
 		      		</div>
 		    	</div>

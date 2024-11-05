@@ -10,76 +10,7 @@
 	{% else %}
     <title>Kerätä</title>
     {% endif %}
-	
-	<!--<script>document.getElementById("user").addEventListener('mousedown', function(e){ e.preventDefault(); }, false);</script>-->
-
-    <!--<script src="{{url_for('static', filename='script/build/dropdown.js')}}"></script>-->
-
-    <script>
-	// Get the modal
-	var modal = document.getElementById('id01');
-	
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	  if (event.target == modal) {
-	    modal.style.display = "none";
-	  }
-	}
-	</script>
-
-	<script>
-	// Get the modal
-	
-	var dropdown = document.getElementById('user-dropdown');
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	if (event.target == dropdown) {
-	    	dropdown.style.display = "none";
-	  }
-	}
-	</script>
-
-	<script> /* Open confirm modal */
-		function openModal() {
-			document.getElementById('id01').style.display='block'
-		}
-
-		document.addEventListener("keydown", event => { //Stäng sidenav om man trycker på escape
-			if (event.keyCode == 27) { //27 är keycode för escape
-				document.getElementById('id01').style.display='none'
-			}
-		});
-	</script>
-
-	<script> /* User dropdown */
-		/* TODO: ändra rotation på arrow 180 grader när man togglar */
-	        function openDropdown() {
-			console.log("Opening user dropdown")
-	        	document.getElementById("arrow").style.transform = "rotate(180deg) scaleX(-1)";
-
-	        	document.getElementById("user-dropdown").style.display = "block";
-			document.addEventListener("keydown", event => { //Stäng sidenav om man trycker på escape
-				if (event.keyCode == 27) { //27 är keycode för escape
-					closeDropdown();
-				}
-			});
-	        }
-	              
-	        function closeDropdown() {
-			console.log("Closing user dropdown");
-	        	document.getElementById("user-dropdown").style.display = "none";
-	        	document.getElementById("arrow").style.transform = "rotate(0deg) scaleX(-1)";
-	        }
-
-		function toggleDropdown() {
-			if (document.getElementById("user-dropdown").style.getPropertyValue('display') == "block") {
-				closeDropdown()
-			}
-			else {
-				openDropdown()
-			}
-		}
-	</script>
+    <script src="{{ url_for('static', filename='script/build/dropdown.js') }}"></script>
 </head>
 <body>
 	<div id="page-container">
@@ -121,11 +52,11 @@
 						{{ current_user.username }}
 						<img src="{{ url_for('static', filename='images/elements/arrow.svg') }}" id="arrow" alt="down arrow" width="28">
 					</div>
-			  		<span onclick="closeDropdown()" id="user-dropdown" class="dropdown-content">
+			  		<div id="user-dropdown" class="dropdown-content">
 						<a href="{{ url_for('index') }}">Your colletions</a>
 						<div style="padding-top: 10px;"></div>
 						<a class="dropdown-button" href="{{ url_for('logout') }}">Sign out</a> <br>
-					</span>
+					</div>
 				</span>
 				{% endif %}
 			</nav>
