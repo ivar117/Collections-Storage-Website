@@ -102,8 +102,8 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Sign up', form=form)
 
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'avif', 'webp', 'svg', 'tiff', 'tif'}
 def allowed_file(filename):
+    ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'avif', 'webp', 'svg', 'tiff', 'tif'}
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
