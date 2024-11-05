@@ -256,7 +256,7 @@ h1 {
 	padding-bottom: 70px;
 	width: 400px;
 	cursor: pointer;
-	border-radius: 20px;
+	border-radius: 15px;
 	height: 548px;
     position: relative;
     float: none;
@@ -336,7 +336,6 @@ h1 {
 	right: 10px; /* Adjust the distance from the left */
 	width: 25px; /* Maintain the width */
 	height: auto; /* Maintain aspect ratio */
-    z-index: 10;
 }
 
 /* Style for dragging around items in a content folder in the grid */
@@ -501,8 +500,31 @@ input {
 	overflow-x: hidden;
 }
 
-#id01 {
+button:hover {
+	opacity:0.9;
+}
+
+#delete-modal {
 	display: none;
+}
+
+.modal {
+	position: fixed; /* Stay in place */
+	z-index: 2; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #717171;
+	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	border: 4.634px solid #ccccccff;
+	width: 50%; /* Could be more or less, depending on screen size */
 }
 
 .modal-button {
@@ -514,9 +536,6 @@ input {
 	width: 100%;
 }
 
-button:hover {
-	opacity:0.9;
-}
 
 .deletebtn:hover {
 	opacity: 0.9;
@@ -559,25 +578,6 @@ button:hover {
 	text-align: center;
 }
 
-/* The Modal (background) */
-.modal {
-	position: fixed; /* Stay in place */
-	z-index: 2; /* Sit on top */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-	background-color: #717171;
-	margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-	border: 4.634px solid #ccccccff;
-	width: 50%; /* Could be more or less, depending on screen size */
-}
 
 /* Style the horizontal ruler */
 hr {
